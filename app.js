@@ -198,19 +198,32 @@ $(document).ready(function() {
             return;
         }
 
-        // Flip card back to front if it's flipped
-        $('#flashcard').removeClass('flipped');
+        // Fade out the card
+        const $card = $('#flashcard');
+        $card.addClass('fade-out');
 
-        // Update display
-        $('#word').text(currentWord);
-        $('#emoji').text(emojiMap[currentWord] || '❓');
-        wordProgress[currentWord].lastSeen = new Date().toISOString();
-
-        // Add animation
-        $('#flashcard').removeClass('fadeIn');
+        // Wait for fade out, then update content and fade in
         setTimeout(() => {
-            $('#flashcard').addClass('fadeIn');
-        }, 10);
+            // Disable flip transition temporarily
+            const $inner = $('.flashcard-inner');
+            $inner.css('transition', 'none');
+
+            // Reset card to front (unflipped) instantly while invisible
+            $card.removeClass('flipped');
+
+            // Update display while card is invisible
+            $('#word').text(currentWord);
+            $('#emoji').text(emojiMap[currentWord] || '❓');
+            wordProgress[currentWord].lastSeen = new Date().toISOString();
+
+            // Re-enable flip transition after a brief moment
+            setTimeout(() => {
+                $inner.css('transition', '');
+            }, 50);
+
+            // Fade back in
+            $card.removeClass('fade-out');
+        }, 200); // Match the CSS transition duration
     }
 
     // Handle correct answer

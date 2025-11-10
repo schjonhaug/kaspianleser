@@ -152,6 +152,11 @@ main {
     }
 }
 
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.2s ease-out;
+}
+
 .word {
     font-size: 5rem;
     font-weight: 800;
