@@ -5,11 +5,14 @@ A simple, kid-friendly flashcard application to help 4-year-olds learn to read N
 ## Features
 
 - **Simple Interface**: Large, colorful buttons designed for young children
+- **Flip Card Animation**: Click card to reveal emoji hint on the back
+- **Confetti Celebration**: Fun animation when child reads correctly
 - **Spaced Repetition**: Words marked incorrect appear more frequently
 - **Progress Tracking**: Saves progress in browser (localStorage)
 - **Responsive Design**: Works on desktop, tablet, and mobile
 - **No Database Required**: Pure static files with localStorage
 - **Easy to Customize**: Add/edit words in simple text file
+- **65 Norwegian Words**: Curated list with clear emoji representations
 
 ## Files
 
@@ -59,9 +62,11 @@ npx http-server
 ### Using the App
 
 1. The app will load words from `words.txt`
-2. Click ✓ (Riktig) if your child reads correctly
-3. Click ✗ (Feil) if they need more practice
-4. Progress saves automatically in the browser
+2. A word appears on the pink card
+3. Click the card to flip and see the emoji hint
+4. Click ✓ (Riktig) if your child reads correctly - confetti will celebrate!
+5. Click ✗ (Feil) if they need more practice
+6. Progress saves automatically in the browser
 
 ## Deploying to GitHub Pages
 
@@ -133,13 +138,25 @@ If a word has weight 3, it's 3 times more likely to appear than a word with weig
 
 ### Adding More Words
 
-Simply edit `words.txt` and add one word per line:
+Simply edit `words.txt` and add one word per line. Make sure to also add the emoji mapping in `app.js`:
 
+**words.txt:**
 ```
 hund
 katt
 ball
 bil
+```
+
+**app.js (in the emojiMap object):**
+```javascript
+const emojiMap = {
+    'hund': '🐕',
+    'katt': '🐱',
+    'ball': '⚽',
+    'bil': '🚗',
+    // ... add your new words here
+};
 ```
 
 ### Changing Colors/Styling
@@ -175,14 +192,28 @@ Click the "Nullstill fremgang" (Reset Progress) button at the bottom to clear al
 
 1. Practice for short sessions (5-10 minutes)
 2. Celebrate progress, not perfection
-3. Let your child click the buttons themselves
-4. Take breaks if they get frustrated
-5. Add words they're interested in
-6. Review difficult words separately
+3. Let your child click the buttons and flip the cards themselves
+4. Use the emoji hints as needed - flip the card if they're stuck
+5. Enjoy the confetti celebration together!
+6. Take breaks if they get frustrated
+7. Add words they're interested in
+8. Review difficult words separately
+
+## Technology Stack
+
+- HTML5 with semantic markup
+- CSS3 with animations (flip cards, fade transitions, confetti)
+- jQuery 3.6.0 for DOM manipulation
+- [canvas-confetti](https://github.com/catdad/canvas-confetti) for celebrations
+- localStorage API for progress persistence
 
 ## License
 
 Free to use and modify for personal use.
+
+## Credits
+
+Built with [Claude Code](https://claude.com/claude-code) - see CLAUDE.md for development notes.
 
 ## Support
 
