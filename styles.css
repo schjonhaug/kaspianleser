@@ -1,0 +1,293 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    background: white;
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2rem;
+}
+
+.stat-value {
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding: 5px 15px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.stat-value.correct {
+    color: #10b981;
+    background: rgba(16, 185, 129, 0.2);
+}
+
+.stat-value.incorrect {
+    color: #ef4444;
+    background: rgba(239, 68, 68, 0.2);
+}
+
+main {
+    padding: 40px;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loading, .error {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #666;
+}
+
+.error {
+    color: #ef4444;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.flashcard-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.flashcard {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    border-radius: 20px;
+    padding: 80px 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.word {
+    font-size: 5rem;
+    font-weight: 800;
+    color: white;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    word-break: break-word;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.btn {
+    padding: 30px 20px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn .icon {
+    font-size: 3rem;
+}
+
+.btn-incorrect {
+    background: #ef4444;
+    color: white;
+}
+
+.btn-incorrect:hover {
+    background: #dc2626;
+}
+
+.btn-correct {
+    background: #10b981;
+    color: white;
+}
+
+.btn-correct:hover {
+    background: #059669;
+}
+
+.progress-info {
+    text-align: center;
+    color: #666;
+    font-size: 1.1rem;
+    padding-top: 20px;
+    border-top: 2px solid #e5e7eb;
+}
+
+footer {
+    padding: 20px 40px;
+    background: #f9fafb;
+    text-align: center;
+    border-top: 2px solid #e5e7eb;
+}
+
+.btn-reset {
+    padding: 12px 24px;
+    font-size: 1rem;
+    background: #6b7280;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-reset:hover {
+    background: #4b5563;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .word {
+        font-size: 3.5rem;
+    }
+
+    .flashcard {
+        padding: 60px 30px;
+        min-height: 200px;
+    }
+
+    .btn {
+        padding: 25px 15px;
+        font-size: 1.2rem;
+    }
+
+    .btn .icon {
+        font-size: 2.5rem;
+    }
+
+    main {
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    header {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .stats {
+        gap: 20px;
+    }
+
+    .stat-item {
+        font-size: 1rem;
+    }
+
+    .stat-value {
+        font-size: 1.2rem;
+    }
+
+    .word {
+        font-size: 2.5rem;
+    }
+
+    .flashcard {
+        padding: 40px 20px;
+        min-height: 150px;
+    }
+
+    .buttons {
+        gap: 15px;
+    }
+
+    .btn {
+        padding: 20px 10px;
+        font-size: 1rem;
+    }
+
+    .btn .icon {
+        font-size: 2rem;
+    }
+
+    main {
+        padding: 20px 15px;
+    }
+}

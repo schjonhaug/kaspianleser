@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lær å lese - Flashcards</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Lær å lese! 📚</h1>
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-label">Riktig:</span>
+                    <span id="correct-count" class="stat-value correct">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Feil:</span>
+                    <span id="incorrect-count" class="stat-value incorrect">0</span>
+                </div>
+            </div>
+        </header>
+
+        <main id="app">
+            <div id="loading" class="loading">
+                <p>Laster ord...</p>
+            </div>
+
+            <div id="flashcard-container" class="flashcard-container hidden">
+                <div class="flashcard">
+                    <div id="word" class="word"></div>
+                </div>
+
+                <div class="buttons">
+                    <button id="incorrect-btn" class="btn btn-incorrect" aria-label="Feil">
+                        <span class="icon">✗</span>
+                        <span class="label">Feil</span>
+                    </button>
+                    <button id="correct-btn" class="btn btn-correct" aria-label="Riktig">
+                        <span class="icon">✓</span>
+                        <span class="label">Riktig</span>
+                    </button>
+                </div>
+
+                <div class="progress-info">
+                    <p>Ord i øvelse: <span id="word-count">0</span></p>
+                </div>
+            </div>
+
+            <div id="error" class="error hidden">
+                <p>Kunne ikke laste ord. Sjekk at words.txt finnes.</p>
+            </div>
+        </main>
+
+        <footer>
+            <button id="reset-btn" class="btn-reset">Nullstill fremgang</button>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
