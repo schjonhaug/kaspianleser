@@ -12,6 +12,75 @@ $(document).ready(function() {
     const STORAGE_KEY_PROGRESS = 'flashcard_progress';
     const STORAGE_KEY_STATS = 'flashcard_session_stats';
 
+    // Emoji mapping
+    const emojiMap = {
+        'mor': '👩',
+        'far': '👨',
+        'baby': '👶',
+        'hund': '🐕',
+        'katt': '🐱',
+        'mus': '🐭',
+        'fugl': '🐦',
+        'ku': '🐄',
+        'gris': '🐷',
+        'hest': '🐴',
+        'and': '🦆',
+        'sau': '🐑',
+        'ball': '⚽',
+        'bil': '🚗',
+        'tog': '🚂',
+        'fly': '✈️',
+        'brød': '🍞',
+        'melk': '🥛',
+        'eple': '🍎',
+        'banan': '🍌',
+        'ost': '🧀',
+        'egg': '🥚',
+        'kake': '🎂',
+        'øye': '👁️',
+        'nese': '👃',
+        'munn': '👄',
+        'øre': '👂',
+        'hånd': '✋',
+        'fot': '🦶',
+        'rød': '🔴',
+        'blå': '🔵',
+        'grønn': '🟢',
+        'gul': '🟡',
+        'rosa': '🩷',
+        'hvit': '⚪',
+        'svart': '⚫',
+        'hus': '🏠',
+        'dør': '🚪',
+        'seng': '🛏️',
+        'bok': '📖',
+        'penn': '✏️',
+        'kopp': '☕',
+        'sko': '👟',
+        'bukse': '👖',
+        'skjorte': '👕',
+        'sokk': '🧦',
+        'lue': '🧢',
+        'jakke': '🧥',
+        'sol': '☀️',
+        'måne': '🌙',
+        'stjerne': '⭐',
+        'regn': '🌧️',
+        'snø': '❄️',
+        'tre': '🌳',
+        'blomst': '🌸',
+        'glad': '😊',
+        'trist': '😢',
+        'ja': '✅',
+        'nei': '❌',
+        'hei': '👋',
+        'takk': '🙏',
+        'sove': '😴',
+        'spise': '🍴',
+        'løpe': '🏃',
+        'gå': '🚶'
+    };
+
     // Initialize the application
     init();
 
@@ -25,6 +94,12 @@ $(document).ready(function() {
         $('#correct-btn').on('click', handleCorrect);
         $('#incorrect-btn').on('click', handleIncorrect);
         $('#reset-btn').on('click', handleReset);
+        $('#flashcard').on('click', toggleFlip);
+    }
+
+    // Toggle card flip
+    function toggleFlip() {
+        $('#flashcard').toggleClass('flipped');
     }
 
     // Load words from words.txt
@@ -123,14 +198,18 @@ $(document).ready(function() {
             return;
         }
 
+        // Flip card back to front if it's flipped
+        $('#flashcard').removeClass('flipped');
+
         // Update display
         $('#word').text(currentWord);
+        $('#emoji').text(emojiMap[currentWord] || '❓');
         wordProgress[currentWord].lastSeen = new Date().toISOString();
 
         // Add animation
-        $('#word').parent().removeClass('fadeIn');
+        $('#flashcard').removeClass('fadeIn');
         setTimeout(() => {
-            $('#word').parent().addClass('fadeIn');
+            $('#flashcard').addClass('fadeIn');
         }, 10);
     }
 

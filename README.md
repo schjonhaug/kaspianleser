@@ -20,12 +20,48 @@ A simple, kid-friendly flashcard application to help 4-year-olds learn to read N
 
 ## How to Use Locally
 
-1. Simply open `index.html` in your web browser
-2. No installation or server required!
-3. The app will load words from `words.txt`
-4. Click ✓ (Riktig) if your child reads correctly
-5. Click ✗ (Feil) if they need more practice
-6. Progress saves automatically
+**Important**: Due to browser security (CORS), you need to run a local web server. Opening `index.html` directly with `file://` won't work in Chrome.
+
+### Option 1: Python (easiest if you have Python installed)
+
+```bash
+# Navigate to the project folder
+cd /path/to/kaspianleser
+
+# Start server
+python3 -m http.server 8000
+```
+
+Then open: **http://localhost:8000**
+
+Stop the server with `Ctrl+C`
+
+### Option 2: PHP
+
+```bash
+php -S localhost:8000
+```
+
+Then open: **http://localhost:8000**
+
+### Option 3: Node.js
+
+```bash
+npx http-server
+```
+
+### Option 4: VS Code Live Server Extension
+
+1. Install "Live Server" extension in VS Code
+2. Right-click `index.html`
+3. Select "Open with Live Server"
+
+### Using the App
+
+1. The app will load words from `words.txt`
+2. Click ✓ (Riktig) if your child reads correctly
+3. Click ✗ (Feil) if they need more practice
+4. Progress saves automatically in the browser
 
 ## Deploying to GitHub Pages
 
