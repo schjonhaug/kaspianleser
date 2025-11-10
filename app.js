@@ -238,6 +238,14 @@ $(document).ready(function() {
         sessionStats.correct++;
         updateStats();
 
+        // Celebrate with confetti!
+        confetti({
+            particleCount: 100,
+            spread: 70,
+            origin: { y: 0.6 },
+            colors: ['#f093fb', '#f5576c', '#667eea', '#764ba2', '#10b981', '#fbbf24']
+        });
+
         // Save and show next word
         saveProgress();
         showNextWord();
