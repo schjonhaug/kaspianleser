@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
     display: flex;
@@ -31,6 +31,7 @@ header {
 }
 
 h1 {
+    font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     font-size: 2.5rem;
     margin-bottom: 20px;
     font-weight: 700;
@@ -44,10 +45,12 @@ h1 {
 }
 
 .stat-item {
+    font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     display: flex;
     align-items: center;
     gap: 10px;
     font-size: 1.2rem;
+    font-weight: 600;
 }
 
 .stat-value {
@@ -77,8 +80,10 @@ main {
 }
 
 .loading, .error {
+    font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     text-align: center;
     font-size: 1.5rem;
+    font-weight: 600;
     color: #666;
 }
 
@@ -159,7 +164,7 @@ main {
 
 .word {
     font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 5rem;
+    font-size: 6.5rem;
     font-weight: 700;
     letter-spacing: 0.15em;
     color: white;
@@ -170,7 +175,7 @@ main {
 }
 
 .emoji {
-    font-size: 8rem;
+    font-size: 10rem;
     text-align: center;
     line-height: 1;
 }
@@ -182,6 +187,7 @@ main {
 }
 
 .btn {
+    font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     padding: 30px 20px;
     font-size: 1.5rem;
     font-weight: 700;
@@ -228,9 +234,11 @@ main {
 }
 
 .progress-info {
+    font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     text-align: center;
     color: #666;
     font-size: 1.1rem;
+    font-weight: 600;
     padding-top: 20px;
     border-top: 2px solid #e5e7eb;
 }
@@ -243,8 +251,10 @@ footer {
 }
 
 .btn-reset {
+    font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     padding: 12px 24px;
     font-size: 1rem;
+    font-weight: 600;
     background: #6b7280;
     color: white;
     border: none;
@@ -264,11 +274,11 @@ footer {
     }
 
     .word {
-        font-size: 3.5rem;
+        font-size: 4.5rem;
     }
 
     .emoji {
-        font-size: 6rem;
+        font-size: 8rem;
     }
 
     .flashcard {
@@ -325,11 +335,11 @@ footer {
     }
 
     .word {
-        font-size: 2.5rem;
+        font-size: 3.5rem;
     }
 
     .emoji {
-        font-size: 4.5rem;
+        font-size: 6rem;
     }
 
     .flashcard {

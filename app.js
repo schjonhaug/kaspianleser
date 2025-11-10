@@ -246,9 +246,19 @@ $(document).ready(function() {
             colors: ['#f093fb', '#f5576c', '#667eea', '#764ba2', '#10b981', '#fbbf24']
         });
 
-        // Save and show next word
+        // Save progress
         saveProgress();
-        showNextWord();
+
+        // Flip to emoji if not already showing
+        const $card = $('#flashcard');
+        if (!$card.hasClass('flipped')) {
+            $card.addClass('flipped');
+        }
+
+        // Wait to show emoji, then show next word
+        setTimeout(() => {
+            showNextWord();
+        }, 1500);
     }
 
     // Handle incorrect answer
@@ -263,9 +273,19 @@ $(document).ready(function() {
         sessionStats.incorrect++;
         updateStats();
 
-        // Save and show next word
+        // Save progress
         saveProgress();
-        showNextWord();
+
+        // Flip to emoji if not already showing
+        const $card = $('#flashcard');
+        if (!$card.hasClass('flipped')) {
+            $card.addClass('flipped');
+        }
+
+        // Wait to show emoji, then show next word
+        setTimeout(() => {
+            showNextWord();
+        }, 1500);
     }
 
     // Update statistics display
